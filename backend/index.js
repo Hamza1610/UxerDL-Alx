@@ -35,10 +35,10 @@ app.get('/api/', (req, res) => {
 //  POST reequest (search document)
 app.post('/api/search', (req, res) => {
 
-    const { searchedtext } = req.body;
-    console.log(searchedtext);
+    const { searchedFile } = req.body;
+    console.log(req.body);
     // need to check this line no syntex like that;
-    BooksInfo.find({ bookName: searchedtext })
+    BooksInfo.find({ bookName: searchedFile })
         .then((result) => {
             res.json(result);
             console.log(result);
