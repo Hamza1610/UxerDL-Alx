@@ -26,19 +26,62 @@ html {
   height: 250px;
   width: 300px;
 }
+.Nav-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Nav-bar div {
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
+}
+.Nav-bar div:hover {
+  color: black;
+  background-color: rgb(147, 252, 147);
+  transition: ease-in 0.7s;
+}
+.Nav-bar div a {
+  color: white;
+  text-decoration: none;
+}
+.Nav-bar div a:hover {
+  color: black;
+  background-color: rgb(147, 252, 147);
+  transition: ease-in 0.7s;
+}
 .menuIcon {
   height: 45px;
 }
 /* Search component */
+.searchForm {
+  background-color: #282c34;
+}
 .searchInput, .searchButton{
+  margin: 10px 2px;
   height: 45px;
   font-size: 20px;
+  border-radius: 10px;
+  border-style: groove;
 }
 .searchInput {
   width: 270px;
 }
 .searchButton {
   width: 100px;
+
+}
+.searchButton:hover {
+  background-color: rgb(147, 252, 147);
+  transition: ease-in 0.7s;
+}
+.search-viewer-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 55vh;
+
 }
 /* List component */
 .list-div {
@@ -61,17 +104,17 @@ html {
 .card-div {
   height: 45vh;
   width: 300px;
-  background-color: #edeff5;
+  background-color: rgb(147, 252, 147);
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
   margin: 10px;
+  border-radius: 10px;
 }
 .card-div:hover {
   height: 50vh;
   width: 350px;
-  background-color: #9acef8;
   transition: ease-in-out 0.5s;
 }
 .card-content {
@@ -86,6 +129,8 @@ html {
   width: 80px;
   height: 30px;
   font-weight: bolder;
+  border-style: groove;
+  border-radius: 10px;
 }
 .download-button:hover {
   color: white;
@@ -118,26 +163,35 @@ html {
   justify-content: center;
   align-items: center;
   height: 500px;
-  width: 400px;
-  background-color: #edeff5;
+  width: 600px;
+  background-color: rgb(147, 252, 147);
+  border-radius: 10px;
 
 }
 .fileName, .bookName, .bookCategory, .UploaderName {
-  width: 250px;
-  height: 30px;
+  font-size: larger;
+  width: 350px;
+  height: 40px;
   margin: 10px;
+  border-radius: 5px;
+  border-style: none;
 }
 .bookDescription {
+  font-size: larger;
   margin: 10px;
-  max-width: 250px;
-  max-height: 100px;
-  min-width: 250px;
-  min-height: 100px;
+  max-width: 350px;
+  max-height: 110px;
+  min-width: 350px;
+  min-height: 110px;
+  border-radius: 5px;
+  border-style: none;
 }
 .submitButton {
-  width: 80px;
-  height: 30px;
+  width: 180px;
+  height: 40px;
   font-weight: bolder;
+  border-radius: 10px;
+  border-style: none;
 
 }
 .submitButton:hover {

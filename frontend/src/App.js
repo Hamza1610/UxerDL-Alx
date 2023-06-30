@@ -7,6 +7,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Upload from "./components/Upload";
 import Search from "./components/Search";
+import  NotFound from './components/NotFound';
 
 function App() {  
 
@@ -24,6 +25,9 @@ function App() {
           </Route>
           <Route exact path='/api/upload'>
             <Upload />
+          </Route>
+          <Route  path=''>
+            <NotFound />
           </Route>
         </Switch>
       </div>

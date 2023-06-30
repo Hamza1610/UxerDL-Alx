@@ -51,7 +51,7 @@ const Search = () => {
       </form>
       <div>
         <h1>Search Results</h1>
-        <div className="listRow">
+        <div className="search-viewer-div">
                   {data && data.map((item) => (
                       <Card key={item._id} list={item} error={item.error}/>
                   ))}
