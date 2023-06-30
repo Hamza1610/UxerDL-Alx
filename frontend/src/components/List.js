@@ -22,15 +22,17 @@ const List = () => {
 
     return (
         <div>
-            <h1>List of Books</h1>
-            {/* List component fetch books list from the database */}
+            <h1>Lists of Books</h1>
+            <div className="list-div">
+                {/* List component fetch books detail from the database */}
 
-            <div className="listRow">
-                {lists && lists.map((item) => (
-                    <Card key={item._id} list={item} error={item.error}/>
-                ))}
+                <div className="listRow">
+                    {lists && lists.map((item) => (
+                        <Card key={item._id} list={item} error={item.error}/>
+                    ))}
+                </div>
+                <div><p>{lists.error}</p></div>
             </div>
-            <div><p>{lists.error}</p></div>
         </div>
     )
 }
