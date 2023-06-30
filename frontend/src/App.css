@@ -4,7 +4,7 @@
 .App {
   text-align: center;
 }
-
+/* Overall div */
 .App-header {
   position: sticky;
   top: 0;
@@ -21,6 +21,7 @@
 .menuIcon {
   height: 45px;
 }
+/* Search component */
 .searchInput, .searchButton{
   height: 45px;
   font-size: 20px;
@@ -31,6 +32,7 @@
 .searchButton {
   width: 100px;
 }
+/* List component */
 .listRow {
   width: 100vw;
   display: flex;
@@ -38,6 +40,7 @@
   align-items: center;
   flex-wrap: wrap;
 }
+/* Card components */
 .card-div {
   height: 45vh;
   width: 300px;
@@ -66,7 +69,51 @@
   display: block;
   text-align: left;
 }
+/* Upload component */
+.form-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 75vh;
+}
+.uploadForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  width: 400px;
+  background-color: #edeff5;
 
+}
+.fileName, .bookName, .bookCategory, .UploaderName {
+  width: 250px;
+  height: 30px;
+  margin: 10px;
+}
+.bookDescription {
+  margin: 10px;
+  max-width: 250px;
+  max-height: 100px;
+  min-width: 250px;
+  min-height: 100px;
+}
+.submitButton {
+  width: 80px;
+  height: 30px;
+  font-weight: bolder;
+
+}
+.submitButton:hover {
+  color: white;
+  background-color: #282c34;
+  transition: all 1s;
+  border-style: none;
+
+}
+.errorName {
+}
 .App-link {
   color: #61dafb;
 }

@@ -53,7 +53,12 @@ app.post('/api/download', (req, res) => {
 
    console.log(req.body);
 
-   // Checks if searchedFileName is in Books folder 
+   // Checks if searchedFileName is in Books folder
+   // Find id in Database
+   BooksInfo.findById(req.body)
+        .then((result) => {
+            console.log(result);
+        })
 });
 
 // POST Request
