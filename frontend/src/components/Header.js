@@ -1,9 +1,9 @@
-
+import logo from './logo.png';
 const Header = () => {
 
   return (
     <header className="App-header">
-      <div>LOGO</div>
+      <div><img src={logo} className='logo'  alt='LOGO' /></div>
       <div className=''>
 
       </div>
