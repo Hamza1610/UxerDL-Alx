@@ -4,6 +4,7 @@ const Card = (props) => {
     const listDetails = props.list
 
     const handleClick = async () => { 
+      
         console.log("Function clicked");
         try {
             const response = await fetch('/api/download', {
@@ -29,14 +30,14 @@ const Card = (props) => {
     return (
         <div className="card-div">
             <div className="dowload-div">
-                <button onClick={handleClick}>Download</button>
+                <button className="download-button" onClick={handleClick}>Download</button>
             </div>
             <div className="card-content"> 
                 <div className="book-destription-div">{listDetails.bookDescription}</div>
                 <div className="book-detail-div">
-                    <p><b>Name of book</b> : <small>{listDetails.bookName}</small></p>
-                    <p><b>Category</b> : <small>{listDetails.bookCategory}</small></p>
-                    <p><b>Author</b> : <small>{listDetails.UploaderName}</small></p>
+                    <text><b>Name of book</b> : <small>{listDetails.bookName}</small></text><br />
+                    <text><b>Category</b> : <small>{listDetails.bookCategory}</small></text><br />
+                    <text><b>Author</b> : <small>{listDetails.UploaderName}</small></text><br />
                 </div>
             </div>
         </div>
