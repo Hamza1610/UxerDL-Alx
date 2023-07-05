@@ -21,6 +21,12 @@ const BookInfoSchema = new Schema ({
     UploaderName: {
         type: String,
         required: true,
+    },
+    fileName: {
+        type: String,
+    },
+    path: {
+        type: String,
     }
 }, { timestamps: true })
 

@@ -216,19 +216,43 @@ html {
   justify-content: center;
 }
 .not-found-header {
+  color: crimson;
   font-size: 10rem;
+  margin: 0px;
 }
 .Not-found-div p {
   font-size: 2rem;
+  color: rgb(147, 252, 147)
 }
+/* Footer */
 footer {
   background-color: #282c34;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
   font-size: calc(5px + 1vmin);
   color: rgb(240, 239, 239);
-  height: 10vh;
   width: 100vw;
+}
+.footer-contact-div, .footer-about-div, .footer-navigation-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.contact-contents, .about-contents, .navigation-contents {
+  width: 250px;
+  height: 250px;
+}
+.about-contents {
+  text-align: justify;
+}
+.contact-contents a, .navigation-contents a {
+  text-decoration: none;
+  color: white;
+}
+.contact-contents a:hover, .navigation-contents a:hover {
+  text-decoration: underline;
 }

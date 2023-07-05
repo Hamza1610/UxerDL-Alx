@@ -1,12 +1,15 @@
 import { useState } from "react";
 const Upload = () => {
-    
-    const [fileName, setFileName] = useState('')
+    const [file, setFile] = useState(null)
     const [bookName, setBookName] = useState('')
     const [bookCategory, setBookCategory] = useState('')
     const [bookDescription, setBookDescription] = useState('')
     const [UploaderName, setUploaderName] = useState('')
     const [error, setError] = useState(null)
+
+    const handleFileChange = (e) => {
+        setFile(e.target.files[0]);
+    };
 
     const handleSubmit = async (e) => {
         /* A function that send both book and info to the books
@@ -14,32 +17,31 @@ const Upload = () => {
         e.preventDefault();
         console.log("Handle Submit function clicked");
 
-        const Data = { fileName: fileName,
-                        bookName: bookName,
-                        bookCategory:bookCategory,
-                        bookDescription: bookDescription,
-                        UploaderName: UploaderName
-                    }
+
+        const Data = new FormData();
+        Data.append("file", file);
+        Data.append("bookName", bookName);
+        Data.append("bookCategory", bookCategory);
+        Data.append("bookDescription", bookDescription);
+        Data.append("UploaderName", UploaderName);
 
         const response = await fetch('/api/upload',{
             method : 'POST',
-            body : JSON.stringify(Data),
-            headers : {
-                'Content-Type' : 'application/json'
-            }
+            body : Data,
         })
         const json = await response.json();
         
         if (!response.ok) {
             setError(json.error)
         }
-        if (response) {
-            setFileName('')
+        if (response && response.ok) {
             setBookName('')
             setBookCategory('')
             setBookDescription('')
             setUploaderName('')
             setError(null)
+
+            console.log("File successfully upload");
         }
 
     }
@@ -49,11 +51,10 @@ const Upload = () => {
                 <label htmlFor="fileName">Enter file</label>
                 <input
                     type="file"
-                    name = "fileName"
-                    className = "fileName"
+                    name = "file"
+                    id="file"
+                    onChange={handleFileChange}
                     placeholder = "Please select from your drive"
-                    onChange={(e) => setFileName(e.target.value)}
-                    value={fileName}
                     required
                 />
 
@@ -72,7 +73,8 @@ const Upload = () => {
                 className = "bookCategory"
                 onChange={(e) => setBookCategory(e.target.value)}
                 value={bookCategory}
-                required>
+                >
+                    <option value=""></option>
                     <option value="Science">Science</option>
                     <option value="Art">Art</option>
                     <option value="Novel/Novella">Novel/Novella</option>

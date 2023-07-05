@@ -1,13 +1,12 @@
-const fs = require('fs');
 const path = require('path');
-
 // Required express mongoose and BooksInfo collection
 const express = require("express");
 const mongoDB = require('mongoose');
 const BooksInfo = require('./models/BooksInfo');
-
+const multer = require('multer');
 // creating express instance
 const app = express();
+const upload = multer({ dest: "uploads/" })
 // middleware
 app.use(express.urlencoded({ extended : true }));
 app.use(express.json());
@@ -52,47 +51,56 @@ app.post('/api/search', (req, res) => {
 app.post('/api/download', (req, res) => {
 
    console.log(req.body);
-
-   // Checks if searchedFileName is in Books folder
    // Find id in Database
    BooksInfo.findById(req.body)
         .then((result) => {
+            
+            const fileName = result.path;
+            const filePath = path.join(__dirname, 'uploads', fileName);
+
+                  
+            // Set the content disposition header
+            res.setHeader('Content-Disposition', `attachment; filename="${fileName}"`);
+
+            console.log(filePath);
+            console.log(fileName);
+            // Send the file
+            res.sendFile(filePath, (err) => {
+              if (err) {
+                console.error("Error sending file:", err);
+                res.status(500).send("Error sending file");
+              }
+            });
             console.log(result);
         })
 });
 
 // POST Request
-app.post('/api/upload', (req, res) => {
+app.post('/api/upload', upload.single('file'), async (req, res) => {
 
-   // Filename is the file sent to the server
-
-    // Destructure of the book detail sent from the client
-    const dataRecieved = req.body;
-
-    const fileRecieved = dataRecieved.fileName;
-    const bookName = dataRecieved.bookName;
-    const { bookCategory } = req.body;
-    // const bookCategory = dataRecieved.bookCategory;
-    const bookDescription = dataRecieved.bookDescription;
-    const UploaderName = dataRecieved.UploaderName;
-
+    const { bookName, bookCategory, bookDescription, UploaderName } = req.body;
+    const { originalname, path } = req.file;
     // save file sent from client to 'Books' folder
-    
+    filePath = path.replace(/^uploads\\/, "");
+    console.log(filePath);
+
     const Data = { 
         bookName: bookName,
         bookCategory: bookCategory,
         bookDescription: bookDescription,
-        UploaderName: UploaderName
+        UploaderName: UploaderName,
+        filename: originalname,
+        path: filePath,
     }
-    console.log(Data);
     // BooksInfo instance of the mongoose sent the req.body(json format) to dabase
     const BookInfo = new BooksInfo(Data);
-
     // Sending BookInfo to the database
     BookInfo.save()
         .then((result) => {
-            res.send(result)
+            res.json(result)
         })
         .catch( (err) => console.log(err));
-        res.json(Data)
+
+        console.log(Data);
+        console.log(bookCategory);
    });
