@@ -2,6 +2,7 @@ import './App.css';
 
 import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
 // components
+import Home from "./components/Home";
 import List from "./components/List";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -17,6 +18,9 @@ function App() {
       <Header />
       <div className='contents'>
         <Switch>
+          <Route exact path='/'>
+            <Home />
+          </Route>
           <Route exact path='/api/'>
             <List />
           </Route>
