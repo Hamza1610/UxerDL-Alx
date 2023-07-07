@@ -7,8 +7,12 @@ html {
 }
 .App {
   text-align: center;
-  background-image: radial-gradient(rgb(15, 172, 15));
-  background-size: contain;
+  background-image: url('./components/icons/lib1.jpg');
+  color: white;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 10px; 
+  backdrop-filter: blur(10px);
   z-index: 0;
 }
 /* Overall div */
@@ -82,8 +86,8 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   width: 100vw;
-  height: 55vh;
 
 }
 /* List component */
@@ -117,6 +121,7 @@ html {
   justify-content: center;
   margin: 10px;
   border-radius: 10px;
+  color: black;
 }
 .card-div.show {
   opacity: 1;
@@ -161,6 +166,7 @@ html {
 
 /* Upload component */
 .form-div {
+  color: black;
   display: flex;
   justify-content: center;
   align-items: center;
