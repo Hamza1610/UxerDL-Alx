@@ -114,7 +114,8 @@ html {
   transition: opacity 0.3s ease-in-out;
   height: 45vh;
   width: 300px;
-  background-color: rgb(147, 252, 147);
+  background: rgb(34,195,126);
+  background: radial-gradient(circle, rgba(34,195,126,1) 0%, rgba(225,235,132,1) 100%);
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -181,7 +182,8 @@ html {
   align-items: center;
   height: 500px;
   width: 600px;
-  background-color: rgb(147, 252, 147);
+  background: rgb(34,195,126);
+background: radial-gradient(circle, rgba(34,195,126,1) 0%, rgba(225,235,132,1) 100%);
   border-radius: 10px;
 
 }

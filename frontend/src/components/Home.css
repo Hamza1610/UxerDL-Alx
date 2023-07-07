@@ -73,7 +73,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgb(147, 252, 147);
+    background: rgb(34,195,126);
+    background: radial-gradient(circle, rgba(34,195,126,1) 0%, rgba(225,235,132,1) 100%);
 }
 .feature-image {
     width: 100%;
