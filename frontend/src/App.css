@@ -7,6 +7,9 @@ html {
 }
 .App {
   text-align: center;
+  background-image: radial-gradient(rgb(15, 172, 15));
+  background-size: contain;
+  z-index: 0;
 }
 /* Overall div */
 .App-header {
@@ -102,6 +105,7 @@ html {
 }
 /* Card components */
 .card-div {
+  box-shadow: #282c34 1px 3px 3px;
   opacity: 5;
   transition: opacity 0.3s ease-in-out;
   height: 45vh;
@@ -164,6 +168,7 @@ html {
   height: 75vh;
 }
 .uploadForm {
+  box-shadow: #282c34 1px 3px 3px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -236,7 +241,7 @@ html {
   height: 75vh;
 }
 .loading-header {
-  color: rgb(147, 252, 147)
+  color: rgb(147, 252, 147);
 }
 /* Footer */
 footer {
@@ -269,4 +274,13 @@ footer {
 }
 .contact-contents a:hover, .navigation-contents a:hover {
   text-decoration: underline;
+}
+.icon {
+  margin-left: 10px;
+  background-color: white;
+  width: 20px;
+  height: 20px;
+}
+.icon:hover {
+  background-color: rgb(147, 252, 147);
 }
