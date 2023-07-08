@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/static/css/main.08a0ba63.css",
+    "main.js": "/static/js/main.1dd15a28.js",
+    "static/js/787.cda612ba.chunk.js": "/static/js/787.cda612ba.chunk.js",
+    "static/media/me.png": "/static/media/me.37a551947359fde7cac3.png",
+    "static/media/lib5.jpg": "/static/media/lib5.19c06fe7c51d725118ea.jpg",
+    "static/media/lib1.jpg": "/static/media/lib1.641e67657118341ec337.jpg",
+    "static/media/logo.png": "/static/media/logo.ed349c86a254d5f02168.png",
+    "static/media/search2.avif": "/static/media/search2.0c9b806f43869c7aa227.avif",
+    "static/media/upload5.avif": "/static/media/upload5.5cd264cb22304e1a626e.avif",
+    "static/media/download1.avif": "/static/media/download1.08cb697612afb2852df0.avif",
+    "static/media/twitter.svg": "/static/media/twitter.0407223bb7bca83e1349f743cc8849a2.svg",
+    "static/media/square-twitter.svg": "/static/media/square-twitter.bd5b7440fadb2193e9190ff4f172dfee.svg",
+    "static/media/house-solid.svg": "/static/media/house-solid.280c584b718b0d189a41faf145ca7fb0.svg",
+    "static/media/upload-solid.svg": "/static/media/upload-solid.a82decd37d5a9be608cf0e71c17c5cbe.svg",
+    "index.html": "/index.html",
+    "static/media/book-solid.svg": "/static/media/book-solid.0619316f07ac60184fe211bfcd95cc9e.svg",
+    "static/media/linkedin-in.svg": "/static/media/linkedin-in.42f56d2e4ae6f93ca987e172233e3da8.svg",
+    "static/media/envelope-solid.svg": "/static/media/envelope-solid.6345f82ededa4dc800949734956dc764.svg",
+    "static/media/facebook-f.svg": "/static/media/facebook-f.3393a8700aa477db6175ff91ae54d6a2.svg",
+    "main.08a0ba63.css.map": "/static/css/main.08a0ba63.css.map",
+    "main.1dd15a28.js.map": "/static/js/main.1dd15a28.js.map",
+    "787.cda612ba.chunk.js.map": "/static/js/787.cda612ba.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.08a0ba63.css",
+    "static/js/main.1dd15a28.js"
+  ]
+}
